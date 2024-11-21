@@ -1,0 +1,25 @@
+<%- include('menu')%>
+<div class="container">
+  <h1>All Products</h1>
+  <div class="row">
+    <% data.forEach(product => { %>
+      <div class="col-xl-3 mb-4">
+        <div class="card" style="width: 18rem">
+          <img
+            src="/uploads/<%= product.image %>"
+            class="card-img-top img-fluid"
+            alt="<%= product.name %>"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text">
+              Price: ₹<%= product.price %><br />
+              Discount: <%= product.discount %>%
+            </p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
